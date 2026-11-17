@@ -15,6 +15,7 @@ import { kimiRankingStrategy, kimiUsageProvider } from "./kimi";
 import { kiroRankingStrategy, kiroUsageProvider } from "./kiro";
 import { museCodeUsageProvider } from "./muse-code";
 import { minimaxCodeUsageProvider } from "./minimax-code";
+import { mistralRankingStrategy, mistralUsageProvider } from "./mistral";
 import { ollamaCloudUsageProvider, ollamaUsageProvider } from "./ollama";
 import { codexRankingStrategy, openaiCodexUsageProvider } from "./openai-codex";
 import { opencodeGoRankingStrategy, opencodeGoUsageProvider } from "./opencode-go";
@@ -51,6 +52,7 @@ export const DEFAULT_USAGE_PROVIDERS: readonly UsageProvider[] = [
 	charmHyperUsageProvider,
 	commandCodeUsageProvider,
 	kiroUsageProvider,
+	mistralUsageProvider,
 ];
 
 const DEFAULT_USAGE_PROVIDER_MAP = new Map<Provider, UsageProvider>(
@@ -75,6 +77,7 @@ const DEFAULT_RANKING_STRATEGIES = new Map<Provider, CredentialRankingStrategy>(
 	["xai-oauth", xaiOauthRankingStrategy],
 	["commandcode", commandCodeRankingStrategy],
 	["kiro", kiroRankingStrategy],
+	["mistral", mistralRankingStrategy],
 ]);
 
 /** Built-in ranking strategy for `provider`. */
